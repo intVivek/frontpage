@@ -1,5 +1,5 @@
 import './App.css';
-import store from './store/index';
+import store from './Store';
 import { Provider } from "react-redux";
 
 function App() {

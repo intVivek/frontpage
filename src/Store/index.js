@@ -1,7 +1,7 @@
-import { createStore } from "redux";
-import repoReducer from './reducer/index';
+import { configureStore } from "@reduxjs/toolkit";
+import repoReducer from './Reducer/index';
 
-const store = createStore(
+const store = configureStore(
   repoReducer,
 );
 
