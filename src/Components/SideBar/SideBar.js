@@ -10,7 +10,7 @@ const SideBar = () => {
     <Header />
     <Search />
     <MessagesTray >
-      <MessageBox />
+      <MessageBox name="Vivek" message="How are you doing ?" time="Yesterday"/>
     </MessagesTray >
   </div>;
 };
