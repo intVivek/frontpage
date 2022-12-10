@@ -1,0 +1,48 @@
+.search{
+    width: 100%; height: 50px;
+    padding-left: 10px;
+    background-color: white;
+    box-sizing: border-box;
+    transition: all 0.2s ease-in-out;
+
+    >.textFeild{
+        height: auto;
+        padding: 7.5px;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        transition: all 0.2s ease-in-out;
+
+
+        >input{
+            width: 100%; height: 35px;
+            border: none; outline: none;
+            padding: 0 10px;
+            font-size: 1.2rem;
+            border-radius: 5px;
+            box-sizing: border-box;
+            padding-left: 20px;
+            font-size: 14px;
+            letter-spacing: 0.6px;
+            color: #353535;
+        }
+
+        &:focus-within {
+            transition: all 0.2s ease-in-out;
+            box-shadow: 0 2px 3px rgba(11,20,26,0.08);
+        }
+
+        ::placeholder{
+            color: #667781;
+            font-size: 12px;
+            letter-spacing: 0.8px;
+        }
+
+        >svg{
+            color: #54656f;
+            padding: 0px 10px 0px 10px;
+            cursor: pointer;
+        }
+    }
+
+}
