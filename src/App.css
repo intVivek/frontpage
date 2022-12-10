@@ -6,7 +6,8 @@
 
 
 :root {
-  --Background-Color: #dfdfdd;
+  --Background-Color: #eae6df;
+  --Background-Color2: #f0f2f5;
   --Accent-Color: #00a884;
   --Shadow: 11,20,26;
 }
