@@ -1,7 +1,7 @@
-import { configureStore } from "@reduxjs/toolkit";
+import { legacy_createStore as createStore} from 'redux'
 import repoReducer from './Reducer/index';
 
-const store = configureStore(
+const store = createStore(
   repoReducer,
 );
 
