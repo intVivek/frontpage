@@ -1,8 +1,7 @@
 import "./DashBoard.scss";
-import React from "react";
 
 const DashBoard = () => {
-  return <div></div>;
+  return <div className="dashBoard"></div>;
 };
 
 export default DashBoard;

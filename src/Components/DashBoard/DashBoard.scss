@@ -1,0 +1,14 @@
+.dashBoard{
+    width: calc(100% - 38px);
+    max-width: 1600px;
+    height: calc(100% - 38px);
+    background-color: #f0f2f5;
+    z-index: 1;
+    box-shadow: 0 6px 18px rgba(var(--Shadow),.05);
+    animation: entry .2s cubic-bezier(.1,.82,.25,1);
+}
+
+@keyframes entry {
+    from {transform: scale(1.3);}
+    to {transform: scale(1);}
+  }
