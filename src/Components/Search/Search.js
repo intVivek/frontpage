@@ -12,7 +12,7 @@ const Search = () => {
 
   return <div className={clicked?"search searchClicked":"search"}>
     <div className='textFeild'>
-      <SearchIcon />
+      <div className='searchIcon'><SearchIcon /></div>
       <input onClick={clickHandler} placeholder="Search or start new chat" />
       <Filter />
     </div>

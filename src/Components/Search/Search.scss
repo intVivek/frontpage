@@ -1,6 +1,5 @@
 .search{
     width: 100%; height: 50px;
-    padding-left: 10px;
     background-color: white;
     box-sizing: border-box;
     transition: all 0.2s ease-in-out;
@@ -9,7 +8,7 @@
 
     >.textFeild{
         height: auto;
-        padding: 7.5px;
+        padding: 7.5px 7.5px 7.5px 20px;
         box-sizing: border-box;
         display: flex;
         align-items: center;
@@ -21,12 +20,13 @@
             border: none; outline: none;
             padding: 0 10px;
             font-size: 1.2rem;
-            border-radius: 5px;
+            border-radius: 0 5px 5px 0;
             box-sizing: border-box;
             padding-left: 20px;
             font-size: 14px;
             letter-spacing: 0.6px;
             color: #353535;
+            background: var(--Background-Color2);
         }
 
         &:focus-within {
@@ -38,6 +38,20 @@
             color: #667781;
             font-size: 12px;
             letter-spacing: 0.8px;
+        }
+
+        .searchIcon{
+            height: 35px;
+            display: grid;
+            place-items: center;
+            background: var(--Background-Color2);
+            border-radius: 5px 0 0 5px;
+
+            >svg{
+                color: #54656f;
+                padding: 0px 10px 0px 10px;
+                cursor: pointer;
+            }
         }
 
         >svg{
