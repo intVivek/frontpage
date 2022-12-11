@@ -6,7 +6,7 @@ const Footer = ({sendChat}) => {
   const [chat, setChat] = useState("");
 
   const sendChatHandler = () => {
-    sendChat({chat});
+    sendChat(chat);
     setChat("");
   }
   return <div className="footer">
@@ -14,7 +14,11 @@ const Footer = ({sendChat}) => {
     <Emoji />
     <TextField value={chat} setValue={setChat}/>
     {chat.length===0?<Record />:
-    <div onClick={sendChatHandler}><Send /></div>}
+    <div 
+      onClick={sendChatHandler}
+    >
+      <Send />
+    </div>}
   </div>;
 };
 

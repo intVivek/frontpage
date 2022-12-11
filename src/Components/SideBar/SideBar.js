@@ -7,32 +7,35 @@ import MessageBox from '../MessageBox';
 import { useSelector, useDispatch } from "react-redux";
 import {selectChat, setAllMessage} from '../../Store/Action';
 import {getAllMessage} from '../../Utils/Api';
+import getTimeFromDate from '../../Utils/getTimeFromDate';
 
 
 const SideBar = () => {
-  const {messages} = useSelector((state) => state);
+  const {messages, user, selectedChat} = useSelector((state) => state);
   const dispatch = useDispatch();
 
   useEffect(()=>{
-    dispatch(setAllMessage(getAllMessage()));
+    dispatch(setAllMessage(getAllMessage(user.id)));
   },[])
 
-  const selectChatHandler = (from) => {
-    dispatch(selectChat(from));
+  const selectChatHandler = (from, i) => {
+    dispatch(selectChat({id: from, index: i}));
   }
 
   return <div className="sideBar">
     <Header />
     <Search />
     <MessagesTray >
-      {messages && messages.map(({id, name, message, date, avatar}) => {
+      {messages && messages.map(({id, name, message, date, avatar}, i) => {
         return <MessageBox 
           key={id} 
           id={id}
+          index={i}
           name={name} 
           message={message} 
-          date={date}
+          time={getTimeFromDate(date)}
           avatar={avatar} 
+          selectedChat={selectedChat}
           onClick={selectChatHandler}
         />;
       })}

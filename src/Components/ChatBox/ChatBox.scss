@@ -1,10 +1,33 @@
 .chatBox{
     width: fit-content;
+    max-width: 60%;
+    height: auto;
     padding: 6px 7px 8px 9px;
     box-sizing: border-box;
-    box-shadow: 0 1px 0.5px rgba(11,20,26),.13;
+    box-shadow: 0 1px 0.5px rgba(11,20,26,.13);
     background-color: white;
     border-radius: 5px;
     user-select: text;
-    font-size: 14px;
+    display: flex;
+    gap: 8px;
+
+    >.chat{
+        font-size: 13.5px;
+        letter-spacing: 0.3px;
+    }
+
+    >.date{
+        height: inherit;
+        color: #667781;
+        align-self: flex-end;
+        font-size: 10.5px;
+        transform: translateY(5px);
+    }
+}
+
+.ownChatBox{
+    background-color: #d9fdd3;
+    color: #111b21;
+    align-self: flex-end;
+    margin-left: auto;
 }

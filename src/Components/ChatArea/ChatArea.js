@@ -5,29 +5,31 @@ import ChatsTray from "./ChatsTray";
 import Footer from "./Footer";
 import ChatBox from "../ChatBox/ChatBox";
 import { useSelector, useDispatch } from "react-redux";
-import {setChat, setAllChat} from '../../Store/Action';
+import {setChat, setAllChat, setMessage} from '../../Store/Action';
 import {getAllChat, sendChat} from '../../Utils/Api';
+import getDate from '../../Utils/getDate';
 
 const ChatArea = () => {
   const dispatch = useDispatch();
   const {chats, selectedChat, user} = useSelector((state) => state);
    
   useEffect(()=>{
-    dispatch(setAllChat(getAllChat(selectedChat)));
+    dispatch(setAllChat(getAllChat(selectedChat.id)));
   },[selectedChat])
 
-  const sendChatHandler = ({chat}) => {
-    const newChat = {message: chat, to: selectedChat, from: user.id, date: new Date()}
-    console.log(newChat)
+  const sendChatHandler = (chat, index) => {
+    const newChat = {message: chat, to: selectedChat.id, from: user.id, date: getDate()};
     dispatch(setChat(newChat));
+    console.log(selectedChat.id, user.id);
+    dispatch(setMessage({index, chat, date: getDate()}));
     sendChat(newChat);
   }
 
   return <div className="chatArea">
     <Header />
     <ChatsTray>
-      {chats && chats.map(({message, data, to})=>{
-        return <ChatBox chat={message} date={data} own={to===user.id?true:false}/>
+      {chats && chats.map(({message, date, from},i)=>{
+        return <ChatBox key={i} chat={message} date={date} own={from===user.id?true:false}/>
       })}
     </ChatsTray>
     <Footer sendChat={sendChatHandler} />

@@ -2,8 +2,8 @@ import React from "react";
 
 export const Community = () => {
   return <div>
-    <svg color ="#54656f" viewBox="0 0 28 28" height="28" width="28" preserveAspectRatio="xMidYMid meet" class="" fill="none">
-    <path fill-rule="evenodd" clip-rule="evenodd" d="M19.2146 12.1436C19.2257 12.2242 19.2405 12.3027 19.2587 
+    <svg color ="#54656f" viewBox="0 0 28 28" height="28" width="28" preserveAspectRatio="xMidYMid meet" fill="none">
+    <path fillRule="evenodd" clipRule="evenodd" d="M19.2146 12.1436C19.2257 12.2242 19.2405 12.3027 19.2587 
         12.38C19.2678 12.4192 19.2777 12.4573 19.2885 12.4942C19.3098 12.5695 19.3347 12.6435 19.3631 12.7161C19.4049
         12.8228 19.4541 12.9261 19.5103 13.0253C19.5476 13.0903 19.5878 13.1541 19.6308 13.2146C19.7592 13.3979 19.9131
         13.5599 20.0872 13.6953C20.2045 13.7857 20.3297 13.8641 20.4611 13.9294C20.5619 13.979 20.6659 14.0209 20.7723 
