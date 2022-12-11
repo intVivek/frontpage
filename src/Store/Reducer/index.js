@@ -1,9 +1,9 @@
 const repoReducer = (state, action) => {
     switch (action.type) {
       case 'setMessage': {
-        state.messages[action.payload.selectedChat.index].message=action.payload.chat;
-        state.messages[action.payload.selectedChat.index].date=action.payload.date;
-        console.log(state, state.messages[action.payload.selectedChat.index]);
+        state.messages[action.payload.index].message=action.payload.chat;
+        state.messages[action.payload.index].date=action.payload.date;
+        console.log(state, state.messages[action.payload.index]);
         return {...state};
       }
       case 'setAllMessage' : {

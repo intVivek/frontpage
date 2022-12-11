@@ -14,21 +14,21 @@ const ChatArea = () => {
   const {chats, selectedChat, user} = useSelector((state) => state);
    
   useEffect(()=>{
-    dispatch(setAllChat(getAllChat(selectedChat.id)));
+    dispatch(setAllChat(getAllChat(selectedChat)));
   },[selectedChat])
 
-  const sendChatHandler = (chat, index) => {
+  const sendChatHandler = (chat) => {
     const newChat = {message: chat, to: selectedChat.id, from: user.id, date: getDate()};
     dispatch(setChat(newChat));
-    console.log(selectedChat.id, user.id);
-    dispatch(setMessage({index, chat, date: getDate()}));
+    console.log(selectedChat);
+    dispatch(setMessage({index: selectedChat.index, chat, date: getDate()}));
     sendChat(newChat);
   }
 
   return <div className="chatArea">
     <Header />
     <ChatsTray>
-      {chats && chats.map(({message, date, from},i)=>{
+      {chats && chats.map(({message, date, from}, i)=>{
         return <ChatBox key={i} chat={message} date={date} own={from===user.id?true:false}/>
       })}
     </ChatsTray>
