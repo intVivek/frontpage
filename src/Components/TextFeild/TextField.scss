@@ -1,0 +1,27 @@
+.textField{
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    padding-left: 20px;
+
+    >input{
+        width: 100%;
+        height: 100%;
+        border: none;
+        outline: none;
+        font-size: 14px;
+        letter-spacing: 0.4px;
+        color: #353535;
+    }
+
+    ::placeholder{
+        color: #667781;
+        font-size: 14px;
+        letter-spacing: 0.4px;
+    }
+}

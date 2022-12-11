@@ -5,3 +5,7 @@ export {Community} from './Community';
 export {Search} from './Search';
 export {Filter} from './Filter';
 export {Chevron} from './Chevron';
+export {Emoji} from './Emoji';
+export {Record} from './Record';
+export {Send} from './Send';
+export {Attach} from './Attach';
