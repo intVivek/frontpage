@@ -4,13 +4,14 @@ import Header from "./Header";
 import Search from '../Search';
 import MessagesTray from './MessagesTray';
 import MessageBox from '../MessageBox';
+import { useSelector, useDispatch } from "react-redux";
+
 
 const SideBar = () => {
-  const [messages, setMessages] = useState([]);
-
+    const {messages} = useSelector((state) => state);
   useEffect(() => {
-    setMessages();
-  }, []);
+    console.log(messages);
+  }, [messages]);
 
   return <div className="sideBar">
     <Header />
