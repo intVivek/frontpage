@@ -64,6 +64,11 @@
         box-sizing: border-box;
         background-color: white;
         overflow-y: scroll;
+        background: #f5f0e9ea;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 20px 50px;
     }
 
     >.footer{

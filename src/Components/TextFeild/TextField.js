@@ -1,9 +1,13 @@
 import "./TextField.scss"
 import React from "react";
 
-const TextField = () => {
+const TextField = ({value, setValue}) => {
   return <div className="textField">
-    <input placeholder=" Type a message" />
+    <input 
+        value={value} 
+        onChange={e=>setValue(e.target.value)} 
+        placeholder=" Type a message" 
+    />
   </div>;
 };
 

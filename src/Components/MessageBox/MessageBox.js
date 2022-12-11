@@ -3,7 +3,7 @@ import {useState} from "react";
 import Avatar from '../Avatar';
 import {Chevron} from '../../Assets/Icons';
 
-const MessageBox = ({name, message, date, avatar}) => {
+const MessageBox = ({name, message, id, date, avatar, onClick}) => {
   const [hover, setHover] = useState(false);
 
   const getTime = () => {
@@ -15,6 +15,7 @@ const MessageBox = ({name, message, date, avatar}) => {
       className='messageBox' 
       onMouseEnter={()=>setHover(true)}
       onMouseLeave={()=>setHover(false)}
+      onClick={()=>onClick(id)}
     >
     <Avatar url={avatar}/>
     <div className='details'>
