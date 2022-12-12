@@ -1,9 +1,10 @@
 import React from "react";
+import ScrollToBottom from 'react-scroll-to-bottom';
 
 const ChatsTray = ({children}) => {
-    return <div className='chatsTray'>
+    return <ScrollToBottom className='chatsTray'>
     {children}
-  </div>;
+  </ScrollToBottom>;
 };
 
 export default ChatsTray;
