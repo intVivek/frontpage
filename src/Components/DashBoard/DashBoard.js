@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import "./DashBoard.scss";
 import SideBar from '../SideBar';
 import ChatArea from '../ChatArea';
