@@ -2,6 +2,7 @@ import {messages, users} from '../Data';
 import _ from 'lodash';
 
 export const getAllMessage = (id) => {
+    console.log(id);
     return new Promise((resolve, reject) => {
         try {
             setTimeout(() => {

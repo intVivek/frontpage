@@ -16,7 +16,7 @@ const ChatArea = () => {
   const {chats, selectedChat, user} = useSelector((state) => state);
    
   useEffect(()=>{
-    getAllChat(selectedChat)
+    getAllChat(selectedChat, user.id)
     .then((chats)=>{
       dispatch(setAllChat(chats));
     })
