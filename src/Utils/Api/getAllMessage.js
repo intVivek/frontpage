@@ -2,7 +2,7 @@ import {messages, users} from '../Data';
 import _ from 'lodash';
 
 export const getAllMessage = (id) => {
-    return Object.values(_.groupBy(messages.filter(({from, to})=>from===id||to===id), ({from, to})=>from===id?to:from))
+    return Object.values(_.groupBy(messages.filter(({from, to})=>(from===id||to===id)&&from!==to), ({from, to})=>from===id?to:from))
     .map(chats => {
         return chats.reduce((prev, current)=>{
             return new Date(prev.date) > new Date(current.date) ? prev : current
