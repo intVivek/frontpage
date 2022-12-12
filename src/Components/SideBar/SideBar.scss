@@ -5,6 +5,7 @@
     flex-direction: column;
     box-sizing: border-box;
     border: 1px solid var(--Border-Color);
+    justify-content: space-between;
 
     >.header{
         width: 100%;

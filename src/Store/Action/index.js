@@ -22,3 +22,8 @@ export const selectChat = (payload) => ({
     type: 'selectChat',
     payload,
 });
+
+export const setUser = (payload) => ({
+    type: 'setUser',
+    payload,
+})

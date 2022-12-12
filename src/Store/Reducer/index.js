@@ -19,6 +19,9 @@ const repoReducer = (state, action) => {
       case 'selectChat' : {
         return {...state, selectedChat: action.payload};
       }
+      case 'setUser' : {
+        return {...state, user: action.payload};
+      }
       default:
         return state;
     }

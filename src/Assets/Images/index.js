@@ -1,1 +1,1 @@
-export {ChatRoom} from './ChatRoom';
+export {ChatRoom} from './IntroScreen';

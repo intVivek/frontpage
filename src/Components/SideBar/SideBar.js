@@ -16,14 +16,14 @@ const SideBar = () => {
 
   useEffect(()=>{
     dispatch(setAllMessage(getAllMessage(user.id)));
-  },[])
+  },[user])
 
   const selectChatHandler = (from, i) => {
     dispatch(selectChat({id: from, index: i}));
   }
 
   return <div className="sideBar">
-    <Header />
+    <Header url={user.avatar}/>
     <Search />
     <MessagesTray >
       {messages && messages.map(({id, name, message, date, avatar}, i) => {
