@@ -16,7 +16,10 @@ const SideBar = () => {
   const dispatch = useDispatch();
 
   useEffect(()=>{
-    dispatch(setAllMessage(getAllMessage(user.id)));
+    getAllMessage(user.id)
+    .then((messages)=>{
+      dispatch(setAllMessage(messages));
+    })
   },[user])
 
   const selectChatHandler = (from, i) => {

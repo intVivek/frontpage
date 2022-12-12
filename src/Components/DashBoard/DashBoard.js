@@ -11,7 +11,10 @@ import {getUser} from '../../Utils/Api';
 const DashBoard = () => {
   const dispatch = useDispatch();
   useEffect(()=>{
-    dispatch(setUser(getUser(userId)));
+    getUser(userId)
+    .then((user)=>{
+      dispatch(setUser(user));
+    })
   },[])
 
   return (

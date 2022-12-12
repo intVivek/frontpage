@@ -7,7 +7,10 @@ const Header = ({id}) => {
   const [friend, setFriend] = useState({});
 
   useEffect(()=>{
-    setFriend(getUser(id));
+    getUser(id)
+    .then((user)=>{
+      setFriend(user);
+    })
   },[id])
   return <div className='header'>
     <Avatar url={friend.avatar} size={"small"}/>

@@ -16,14 +16,19 @@ const ChatArea = () => {
   const {chats, selectedChat, user} = useSelector((state) => state);
    
   useEffect(()=>{
-    dispatch(setAllChat(getAllChat(selectedChat)));
+    getAllChat(selectedChat)
+    .then((chats)=>{
+      dispatch(setAllChat(chats));
+    })
   },[selectedChat])
 
   const sendChatHandler = (chat) => {
     const newChat = {message: chat, to: selectedChat.id, from: user.id, date: getDate()};
+    sendChat(newChat)
+    .then((res)=>{
     dispatch(setChat(newChat));
     dispatch(setMessage({index: selectedChat.index, chat, date: getDate()}));
-    sendChat(newChat);
+    })
   }
 
   return <>{selectedChat.index>=0?<div className="chatArea">
