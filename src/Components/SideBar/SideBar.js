@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import "./SideBar.scss"
 import {useEffect} from "react";
 import Header from "./Header";

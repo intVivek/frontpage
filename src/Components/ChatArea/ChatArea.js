@@ -1,4 +1,5 @@
-import {useEffect} from "react";
+/* eslint-disable react-hooks/exhaustive-deps */
+import {useEffect, useRef} from "react";
 import "./ChatArea.scss";
 import Header from "./Header";
 import ChatsTray from "./ChatsTray";
@@ -12,6 +13,7 @@ import IntroScreen from "./IntroScreen";
 
 const ChatArea = () => {
   const dispatch = useDispatch();
+  const bottomRef = useRef(null)
   const {chats, selectedChat, user} = useSelector((state) => state);
    
   useEffect(()=>{
@@ -21,17 +23,18 @@ const ChatArea = () => {
   const sendChatHandler = (chat) => {
     const newChat = {message: chat, to: selectedChat.id, from: user.id, date: getDate()};
     dispatch(setChat(newChat));
-    console.log(selectedChat);
     dispatch(setMessage({index: selectedChat.index, chat, date: getDate()}));
     sendChat(newChat);
+    bottomRef.current?.scrollIntoView({ behavior: "smooth" })
   }
 
   return <>{selectedChat.index>=0?<div className="chatArea">
     <Header id={selectedChat.id}/>
     <ChatsTray>
       {chats && chats.map(({message, date, from}, i)=>{
-        return <ChatBox key={i} chat={message} date={date} own={from===user.id?true:false}/>
+        return <ChatBox key={i} chat={message} date={date} own={from===user.id?true:false} />
       })}
+      <div className = "bottom" ref={bottomRef} />
     </ChatsTray>
     <Footer sendChat={sendChatHandler} />
   </div>:<IntroScreen/>}</>
