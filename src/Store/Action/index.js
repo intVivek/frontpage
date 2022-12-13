@@ -27,3 +27,8 @@ export const setUser = (payload) => ({
     type: 'setUser',
     payload,
 })
+
+export const setMsgTop = (payload) => ({
+    type: 'setMsgTop',
+    payload,
+})

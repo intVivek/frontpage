@@ -3,7 +3,7 @@ export const users = {
    "1":{
       "id":1,
       "name":"Vivek Srivastava",
-      "avatar":"https://lh3.googleusercontent.com/-6sMMxPABkSg/AAAAAAAAAAI/AAAAAAAAAAA/AFi9ZuFhvjNprVoXxaytsxxevSXDvM_mTw/photo.jpg?sz=46"
+      "avatar":"https://robohash.org/estquiset.png?size=50x50&set=set2"
    },
    "2":{
       "id":2,

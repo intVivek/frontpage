@@ -8,7 +8,6 @@ import MessageBox from '../MessageBox';
 import { useSelector, useDispatch } from "react-redux";
 import {selectChat, setAllMessage} from '../../Store/Action';
 import {getAllMessage} from '../../Utils/Api';
-import getTimeFromDate from '../../Utils/getTimeFromDate';
 
 
 const SideBar = () => {
@@ -37,7 +36,7 @@ const SideBar = () => {
           index={i}
           name={name} 
           message={message} 
-          time={getTimeFromDate(date)}
+          time={date}
           avatar={avatar} 
           selectedChat={selectedChat}
           onClick={selectChatHandler}

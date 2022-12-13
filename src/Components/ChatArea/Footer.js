@@ -8,6 +8,7 @@ const Footer = ({sendChat}) => {
   const sendChatHandler = () => {
     if(chat.length===0)return;
     sendChat(chat);
+    
     setChat("");
   }
 

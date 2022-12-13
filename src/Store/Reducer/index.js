@@ -3,7 +3,6 @@ const repoReducer = (state, action) => {
       case 'setMessage': {
         state.messages[action.payload.index].message=action.payload.chat;
         state.messages[action.payload.index].date=action.payload.date;
-        console.log(state, state.messages[action.payload.index]);
         return {...state};
       }
       case 'setAllMessage' : {
@@ -21,6 +20,11 @@ const repoReducer = (state, action) => {
       }
       case 'setUser' : {
         return {...state, user: action.payload};
+      }
+      case 'setMsgTop' : {
+        state.messages.sort((a,b)=>new Date(b.date) - new Date(a.date));
+        console.log(state.messages);
+        return {...state};
       }
       default:
         return state;

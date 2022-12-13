@@ -1,10 +1,10 @@
 import "./ChatBox.scss";
-import getTimeFromDate from '../../Utils/getTimeFromDate';
+import {UTCtoIST} from '../../Utils/UTCtoIST';
 
 const ChatBox = ({chat, date, own, ref}) => {
   return <div className={own?"chatBox ownChatBox":"chatBox"}>
     <div className='chat'>{chat}</div>
-    <div className='date'>{getTimeFromDate(date)}</div>
+    <div className='date'>{UTCtoIST(date)}</div>
   </div>;
 };
 

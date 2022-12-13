@@ -6,7 +6,7 @@ import ChatsTray from "./ChatsTray";
 import Footer from "./Footer";
 import ChatBox from "../ChatBox/ChatBox";
 import { useSelector, useDispatch } from "react-redux";
-import {setChat, setAllChat, setMessage} from '../../Store/Action';
+import {setChat, setAllChat, setMessage, setMsgTop} from '../../Store/Action';
 import {getAllChat, sendChat} from '../../Utils/Api';
 import getDate from '../../Utils/getDate';
 import IntroScreen from "./IntroScreen";
@@ -28,6 +28,7 @@ const ChatArea = () => {
     .then((res)=>{
     dispatch(setChat(newChat));
     dispatch(setMessage({index: selectedChat.index, chat, date: getDate()}));
+    dispatch(setMsgTop());
     })
   }
 
